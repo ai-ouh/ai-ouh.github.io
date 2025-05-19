@@ -4,12 +4,6 @@ title: Welcome to My Documentation
 nav_order: 1
 ---
 
----
-layout: home
-title: Classes
-nav_order: 2
----
-
 
 # Welcome to My Project Documentation
 
