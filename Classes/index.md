@@ -1,6 +1,6 @@
 ---
 title: Classes
 nav_order: 1
-layout: home
+layout: default
 has_children: true
 ---
