@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Welcome to My Documentation
-nav_order: 1
+nav_order: 100
 ---
 
 
