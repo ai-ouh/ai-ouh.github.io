@@ -1,3 +1,9 @@
+---
+title: Barbarian
+nav_order: 1
+parent: Classes
+---
+
 ## Barbarian
 
 Table: Core Barbarian Traits
