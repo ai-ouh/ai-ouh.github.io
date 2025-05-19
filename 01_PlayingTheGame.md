@@ -1,3 +1,9 @@
+---
+title: Playing the Game
+nav_order: 2
+layout: default
+---
+
 # Playing the Game
 
 ## Rhythm of Play
