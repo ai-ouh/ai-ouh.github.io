@@ -1,174 +1,39 @@
-# just-the-docs-template
+# DND 5.2 SRD in Markdown
 
-This is a *bare-minimum* template to create a [Jekyll] site that:
+The project is roughly complete and currently should be widely useable.
 
-- uses the [Just the Docs] theme;
-- can be built and published on [GitHub Pages];
-- can be built and previewed locally, and published on other platforms.
+There is a caveat that it isn't consistently formatted all the way through. Primarily features are not denoted the same way through out the document. I also haven't done any passes through to do proof reading to ensure that I didn't miss any weird line breaks in the middle of sentences. I did correct them as I saw them going through, but I could have missed some.
 
-More specifically, the created site:
+I may go through and clean up the formatting and proof read at some point, but honestly, it's pretty much done and anyone should feel free to use it as is. Any changes will be relatively minor and won't really affect most people very much.
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem;
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages.
+Please use this however you please, while still abiding by the license terms that wizards of the coast put on the original document, which also apply to this document.
 
-To get started with creating a site, simply:
+## Formatting changes
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+There was a step by step numbered list in "Playing the Game" in the "D20 Tests" section that was numbered beginning at 4 and ending at 6. I changed this to be 1-3 instead, since that seemed to be the actual intent, and the 4-6 numbering seemed like a typo.
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](#hosting-your-docs-from-an-existing-project-repo).
+The class tables for each class had a heading above all the spell slots that reads `--Spell Slots Per Level--` with the numbers directly beneath them. I removed that text and put it in the table caption. I am not certain mark down could support having multiple header lines as it was done here. I like the approach OldManUmby took in their work on the [DND SRD ReMastered](https://github.com/OldManUmby/DND.SRD.Wiki) project, where caster classes have their spell slots in a seperate table from their main class. But I decided not to do that since I'm going for accurate to the original as a base for everyone. This project is meant to enable people to do whatever they want with it, including improve it.
 
-After completing the creation of your new site on GitHub, update it as needed:
+The PDF puts "Monsters A-Z" as a sub section of Monsters. I put it as its own independent chapter, like the "Animals" chapter is in the pdf.
 
-## Replace the content of the template pages
+I didn't go through and add subsections in the monsters a-z section. For example "Animated objects" isn't a section. You'll just find the animated object listed individually.
 
-Update the following files to your own content:
+## Process
 
-- `index.md` (your new home page)
-- `README.md` (information for those who access your site repo on GitHub)
+I used a wonderful tool called [marker](https://github.com/VikParuchuri/marker) to generate a "pretty good, but still needs work" markdown file, which I then split into multiple files. So far as I can tell, the main section that came out the roughest was the monsters / animals sections. I may try and re-generate just those sections by themselves to see if I get better results.
 
-## Changing the version of the theme and/or Jekyll
+Basically, this was a semi-automated process. I generated a base file, and then I painstakingly go through and ensure the format, tables, headings, etc... are how I want them.
 
-Simply edit the relevant line(s) in the `Gemfile`.
+For the monsters, I took the excellently done ones from [Mike Shea's Lazy GM Tools repository](https://github.com/mshea/lazy_gm_tools), of [slyflourish.com](https://slyflourish.com/) fame. If you need 5e monsters, definitely check that repository out. There are monsters from many sources there including some of kobold press's monsters and level up advanced 5e.
 
-## Adding a plugin
+## Markdown Extensions
 
-The Just the Docs theme automatically includes the [`jekyll-seo-tag`] plugin.
+Table captions are denoted with `Table: Caption Text` before tables.
 
-To add an extra plugin, you need to add it in the `Gemfile` *and* in `_config.yml`. For example, to add [`jekyll-default-layout`]:
+## Contributions
 
-- Add the following to your site's `Gemfile`:
+I likely won't accept any as the project is largely done. But feel free to use this repository for your own project, GM notes, player notes, making a better version of them in markdown, whatever. 
 
-  ```ruby
-  gem "jekyll-default-layout"
-  ```
+## Legal Notice
 
-- And add the following to your site's `_config.yml`:
-
-  ```yaml
-  plugins:
-    - jekyll-default-layout
-  ```
-
-Note: If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.
-
-## Publishing your site on GitHub Pages
-
-1.  If your created site is `YOUR-USERNAME/YOUR-SITE-NAME`, update `_config.yml` to:
-
-    ```yaml
-    title: YOUR TITLE
-    description: YOUR DESCRIPTION
-    theme: just-the-docs
-
-    url: https://YOUR-USERNAME.github.io/YOUR-SITE-NAME
-
-    aux_links: # remove if you don't want this link to appear on your pages
-      Template Repository: https://github.com/YOUR-USERNAME/YOUR-SITE-NAME
-    ```
-
-2.  Push your updated `_config.yml` to your site on GitHub.
-
-3.  In your newly created repo on GitHub:
-    - go to the `Settings` tab -> `Pages` -> `Build and deployment`, then select `Source`: `GitHub Actions`.
-    - if there were any failed Actions, go to the `Actions` tab and click on `Re-run jobs`.
-
-## Building and previewing your site locally
-
-Assuming [Jekyll] and [Bundler] are installed on your computer:
-
-1.  Change your working directory to the root directory of your site.
-
-2.  Run `bundle install`.
-
-3.  Run `bundle exec jekyll serve` to build your site and preview it at `localhost:4000`.
-
-    The built site is stored in the directory `_site`.
-
-## Publishing your built site on a different platform
-
-Just upload all the files in the directory `_site`.
-
-## Customization
-
-You're free to customize sites that you create with this template, however you like!
-
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
-
-## Hosting your docs from an existing project repo
-
-You might want to maintain your docs in an existing project repo. Instead of creating a new repo using the [just-the-docs template](https://github.com/just-the-docs/just-the-docs-template), you can copy the template files into your existing repo and configure the template's Github Actions workflow to build from a `docs` directory. You can clone the template to your local machine or download the `.zip` file to access the files.
-
-### Copy the template files
-
-1.  Create a `.github/workflows` directory at your project root if your repo doesn't already have one. Copy the `pages.yml` file into this directory. GitHub Actions searches this directory for workflow files.
-
-2.  Create a `docs` directory at your project root and copy all remaining template files into this directory.
-
-### Modify the GitHub Actions workflow
-
-The GitHub Actions workflow that builds and deploys your site to Github Pages is defined by the `pages.yml` file. You'll need to edit this file to that so that your build and deploy steps look to your `docs` directory, rather than the project root.
-
-1.  Set the default `working-directory` param for the build job.
-
-    ```yaml
-    build:
-      runs-on: ubuntu-latest
-      defaults:
-        run:
-          working-directory: docs
-    ```
-
-2.  Set the `working-directory` param for the Setup Ruby step.
-
-    ```yaml
-    - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-          bundler-cache: true
-          cache-version: 0
-          working-directory: '${{ github.workspace }}/docs'
-    ```
-
-3.  Set the path param for the Upload artifact step:
-
-    ```yaml
-    - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs/_site/
-    ```
-
-4.  Modify the trigger so that only changes within the `docs` directory start the workflow. Otherwise, every change to your project (even those that don't affect the docs) would trigger a new site build and deploy.
-
-    ```yaml
-    on:
-      push:
-        branches:
-          - "main"
-        paths:
-          - "docs/**"
-    ```
-
-## Licensing and Attribution
-
-This repository is licensed under the [MIT License]. You are generally free to reuse or extend upon this code as you see fit; just include the original copy of the license (which is preserved when you "make a template"). While it's not necessary, we'd love to hear from you if you do use this template, and how we can improve it for future use!
-
-The deployment GitHub Actions workflow is heavily based on GitHub's mixed-party [starter workflows]. A copy of their MIT License is available in [actions/starter-workflows].
-
-----
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Jekyll]: https://jekyllrb.com
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[Bundler]: https://bundler.io
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
-[`jekyll-default-layout`]: https://github.com/benbalter/jekyll-default-layout
-[`jekyll-seo-tag`]: https://jekyll.github.io/jekyll-seo-tag
-[MIT License]: https://en.wikipedia.org/wiki/MIT_License
-[starter workflows]: https://github.com/actions/starter-workflows/blob/main/pages/jekyll.yml
-[actions/starter-workflows]: https://github.com/actions/starter-workflows/blob/main/LICENSE
+This work includes material from the System Reference Document 5.2 (“SRD 5.2”) by Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd. The SRD 5.2 is licensed under the Creative Commons Attribution 4.0 International License, available at https://creativecommons.org/licenses/by/4.0/legalcode.
