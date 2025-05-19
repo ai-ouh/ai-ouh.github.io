@@ -5,6 +5,7 @@ nav_order: 1
 ---
 
 ---
+layout: home
 title: Classes
 nav_order: 2
 ---
