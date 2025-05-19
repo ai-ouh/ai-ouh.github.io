@@ -2,7 +2,7 @@
 title: Barbarian
 nav_order: 1
 parent: Classes
-layout: home
+layout: default
 ---
 
 ## Barbarian
