@@ -4,6 +4,12 @@ title: Welcome to My Documentation
 nav_order: 1
 ---
 
+title: Classes
+nav_order: 2
+
+---
+
+
 # Welcome to My Project Documentation
 
 This site provides comprehensive documentation for the **My Project** system, covering setup, usage, API references, and more.
